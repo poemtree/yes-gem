@@ -2,7 +2,7 @@
   <h1>Create post</h1>
 </div>
 <div class="ml-3">
-  <form action="/posts" method="post">
+<!--  <form action="/posts" method="post">
     <div class="form-group">
       <label for="posttitle">Title</label><br>
       <input id="posttitle"type="text" name="title">
@@ -12,6 +12,13 @@
       <textarea id="postcontent" name="content" rows="8" cols="80"></textarea>
     </div>
     <button type="submit" class="btn btn-link text-dark"><i class="fas fa-sticky-note fa-1x"> Submit</i></button>
+    <a class="text-danger ml-1" href="/" role="button"><i class="fas fa-ban"> Cancle</i></a>
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  </form>
+  </form> -->
+  <%= form_for @post do |f| %>
+    <%= f.text_field :title %>
+    <%= f.text_area :content %>
+    <%= f.submit %>
+  <% end %>
+
 </div>

@@ -1,7 +1,10 @@
 class CommentsController < ApplicationController
   def create
-    Comment.create(content: params[:content], post_id: params[:post_id])
-    @id =
+    comment = current_user.comments.new(comment_params)
+    comment.save
     redirect_to "/posts/#{params[:post_id]}"
+  end
+  def comment_params
+    params.permit(:content, :post_id)
   end
 end

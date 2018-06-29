@@ -1,7 +1,7 @@
-<div class="mt3 ml3">
+<div>
   <h1>Posts</h1>
 </div>
-<div>
+<div class="col-12">
   <table class="table table-sm table-hover">
     <thead>
       <tr>
@@ -19,6 +19,7 @@
           <td><%= post.title %></td>
           <td><%= post.content %></td>
           <td><%= post.created_at %></td>
+          <td><%= link_to "<i class='fas fa-edit'></i>".html_safe, post %></td>
           <td><a href="/posts/<%= post.id %>"><i class="fas fa-edit"></i></a></td>
         </tr>
       <% end %>
@@ -26,5 +27,5 @@
   </table>
 </div>
 <div>
-  <a class="text-dark" href="/posts/new" role="button"><i class="fas fa-plus-circle">New post</i></a>
+  <a class="text-dark" href="/posts/new" role="button"><i class="fas fa-plus-circle"> New post</i></a>
 </div>
